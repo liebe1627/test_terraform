@@ -1,6 +1,3 @@
-data "azurerm_resource_group" "rg5" {
-  name = var.source_info.res_name
-}
 
 terraform{
     required_providers {

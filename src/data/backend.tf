@@ -3,8 +3,8 @@ resource "azurerm_resource_group" "rg5" {
   location = var.res_grp_name.location
 }
 
-resource "azurerm_storage_account" "storage1" {
-  name = "${random_pet.prefix.id}-storage"
+resource "azurerm_storage_account" "st1" {
+  name = "storageaccountno1"
   resource_group_name = azurerm_resource_group.rg5.name
   location = azurerm_resource_group.rg5.location
   account_tier = var.storage_account.tier
@@ -12,9 +12,9 @@ resource "azurerm_storage_account" "storage1" {
 }
 
 resource "azurerm_storage_container" "storage_container1" {
-  name = "${azurerm_storage_account.storage1.name}-container1"
-  storage_account_id = azurerm_storage_account.storage1.id
+  name = "${azurerm_storage_account.st1.name}container1"
   container_access_type = var.container.access
+  storage_account_name = azurerm_storage_account.st1.name
 }
 
 resource "random_pet" "prefix" {
