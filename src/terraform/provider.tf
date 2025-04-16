@@ -9,8 +9,8 @@ terraform{
     required_version = ">=1.1.0"
     backend "azurerm" {
       resource_group_name = "terraform_automate"
-      storage_account_name = "staccone"
-      container_name = "stacconecontainer1"
+      storage_account_name = "storageaccountno1"
+      container_name = "storageaccountno1container1"
       key = "data.terraform.tfstate"
     }
 }
